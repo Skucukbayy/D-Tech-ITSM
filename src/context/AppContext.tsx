@@ -116,27 +116,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [role, setRoleState] = useState<UserRole>('admin');
   const [language, setLanguage] = useState<Language>('tr'); // Default to Turkish
   const [activeView, setActiveView] = useState<ActiveView>('home');
-
-  // Sync activeView with window.location.hash
-  useEffect(() => {
-    const handleHash = () => {
-      const rawHash = window.location.hash.replace('#/', '').replace('#', '');
-      const parts = rawHash.split('/');
-      const view = parts[0];
-      if (['home', 'assets', 'tickets', 'changes', 'compliance', 'portal', 'settings'].includes(view)) {
-        setActiveView(view as ActiveView);
-      }
-      if (rawHash.includes('incident-modal') && tickets.length > 0) {
-        setSelectedTicket(tickets[0]);
-      }
-      if (rawHash.includes('ad-modal')) {
-        setAdModalOpen(true);
-      }
-    };
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
-  }, [tickets]);
   const [look, setLook] = useState<LookConfig>({
     theme: 'dark',
     wall: 'aurora',
@@ -199,6 +178,20 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);
   const [unreadNotifications, setUnreadNotifications] = useState(3);
   const [liveEventToast, setLiveEventToast] = useState<{ message: string; type: string } | null>(null);
+
+  // Sync activeView with window.location.hash
+  useEffect(() => {
+    const handleHash = () => {
+      const rawHash = window.location.hash.replace('#/', '').replace('#', '');
+      const view = rawHash.split('/')[0];
+      if (['home', 'assets', 'tickets', 'changes', 'compliance', 'portal', 'settings'].includes(view)) {
+        setActiveView(view as ActiveView);
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   // Translation helper
   const t = (key: keyof typeof translations['tr']) => {
