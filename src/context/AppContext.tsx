@@ -101,6 +101,10 @@ interface AppContextType {
   liveEventToast: { message: string; type: string } | null;
   clearLiveEventToast: () => void;
 
+  // Data Seeding / Clean State
+  loadSampleData: () => void;
+  clearAllData: () => void;
+
   // Notification badge
   unreadNotifications: number;
   markNotificationsRead: () => void;
@@ -112,6 +116,27 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [role, setRoleState] = useState<UserRole>('admin');
   const [language, setLanguage] = useState<Language>('tr'); // Default to Turkish
   const [activeView, setActiveView] = useState<ActiveView>('home');
+
+  // Sync activeView with window.location.hash
+  useEffect(() => {
+    const handleHash = () => {
+      const rawHash = window.location.hash.replace('#/', '').replace('#', '');
+      const parts = rawHash.split('/');
+      const view = parts[0];
+      if (['home', 'assets', 'tickets', 'changes', 'compliance', 'portal', 'settings'].includes(view)) {
+        setActiveView(view as ActiveView);
+      }
+      if (rawHash.includes('incident-modal') && tickets.length > 0) {
+        setSelectedTicket(tickets[0]);
+      }
+      if (rawHash.includes('ad-modal')) {
+        setAdModalOpen(true);
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, [tickets]);
   const [look, setLook] = useState<LookConfig>({
     theme: 'dark',
     wall: 'aurora',
@@ -133,11 +158,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     tagline: 'Enterprise ITSM & ISO 27001'
   });
 
-  const [assets, setAssets] = useState<HardwareAsset[]>(INITIAL_ASSETS);
-  const [tickets, setTickets] = useState<Ticket[]>(INITIAL_TICKETS);
+  // Clean state per user requirement ("içerisinde kayıt olmasın")
+  const [assets, setAssets] = useState<HardwareAsset[]>([]);
+  const [tickets, setTickets] = useState<Ticket[]>([]);
   const [technicians, setTechnicians] = useState<Technician[]>(INITIAL_TECHNICIANS);
   const [isoControls] = useState<IsoControl[]>(ISO_27001_CONTROLS);
-  const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>(INITIAL_AUDIT_LOGS);
+  const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
   const [changes] = useState<ChangeRequest[]>(INITIAL_CHANGES);
 
   // Outbox Emails
@@ -701,6 +727,26 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const clearLiveEventToast = () => setLiveEventToast(null);
 
+  const loadSampleData = () => {
+    setAssets(INITIAL_ASSETS);
+    setTickets(INITIAL_TICKETS);
+    setAuditLogs(INITIAL_AUDIT_LOGS);
+    setLiveEventToast({
+      message: '✨ ISO 27001 Örnek Demo Verileri Başarıyla Yüklendi',
+      type: 'info'
+    });
+  };
+
+  const clearAllData = () => {
+    setAssets([]);
+    setTickets([]);
+    setAuditLogs([]);
+    setLiveEventToast({
+      message: '🧹 Tüm Kayıtlar Temizlendi (Temiz Başlangıç)',
+      type: 'info'
+    });
+  };
+
   const markNotificationsRead = () => {
     setUnreadNotifications(0);
   };
@@ -761,6 +807,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         simulateIncomingLiveEvent,
         liveEventToast,
         clearLiveEventToast,
+        loadSampleData,
+        clearAllData,
         unreadNotifications,
         markNotificationsRead
       }}

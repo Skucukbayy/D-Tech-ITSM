@@ -13,6 +13,10 @@
 [![Active Directory](https://img.shields.io/badge/Active_Directory-LDAPS_636-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
+<p align="center">
+  <img src="docs/demo.gif" alt="D-Tech ITSM Interactive Platform Demo" style="border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.5); max-width: 100%;" />
+</p>
+
 ---
 
 ## 🌟 Overview
@@ -76,7 +80,33 @@ Built-in mapping to the ISO/IEC 27001:2022 Annex A controls:
 
 ---
 
-## 🛠️ Technology Stack & Architecture
+## 📸 Visual Tour & Interface Gallery
+
+<div align="center">
+
+### 1. Interactive Drag-and-Drop Kanban Board
+*Live card swapping, column transitions, and real-time SLA countdown telemetry*
+<img src="docs/screenshots/kanban.png" alt="Drag-and-Drop Kanban Board" width="92%" style="border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.12);" />
+
+### 2. Executive Cockpit & KPI Dashboard
+*Aggregated operational telemetry, critical P1 incident triage, and automated health monitoring*
+<img src="docs/screenshots/dashboard.png" alt="Executive Cockpit Dashboard" width="92%" style="border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.12);" />
+
+### 3. Physical Hardware Asset Intelligence (ITAM)
+*Hardware lifecycle tracking, encryption status, and digital custody (Zimmet Tutanağı)*
+<img src="docs/screenshots/assets.png" alt="Physical Asset Intelligence" width="92%" style="border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.12);" />
+
+### 4. ISO/IEC 27001:2022 ISMS Continuous Audit Center
+*Annex A controls ledger, cryptographic SHA-256 evidence chain, and one-click compliance export*
+<img src="docs/screenshots/compliance.png" alt="ISO 27001 ISMS Compliance Center" width="92%" style="border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.12);" />
+
+### 5. Change Advisory Board (CAB) & RFC Governance
+*Multi-member CAB quorum voting, rollback verification, and scheduled maintenance windows*
+<img src="docs/screenshots/changes.png" alt="Change Management CAB" width="92%" style="border-radius: 12px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.12);" />
+
+</div>
+
+---
 
 ```
 d-tech-itsm/

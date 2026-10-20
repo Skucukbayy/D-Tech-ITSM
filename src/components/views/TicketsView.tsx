@@ -39,6 +39,7 @@ export const TicketsView: React.FC = () => {
     simulateIncomingLiveEvent,
     liveEventToast,
     clearLiveEventToast,
+    loadSampleData,
     setActiveModal,
     setSelectedTicket,
     selectedTicket
@@ -291,6 +292,45 @@ export const TicketsView: React.FC = () => {
           </button>
         ))}
       </div>
+
+      {/* Clean Slate Empty State Banner */}
+      {tickets.length === 0 && (
+        <div className="p-6 rounded-2xl glass border border-white/10 bg-fill/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs animate-fade-in shadow-glass-lift">
+          <div className="flex items-center gap-3.5">
+            <div className="p-3 rounded-2xl bg-accent/20 text-accent">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="font-bold text-text text-sm">
+                {isTr ? 'Temiz Kurulum: Henüz Açık Çağrı Kaydı Yok' : 'Clean Slate: No Tickets Recorded Yet'}
+              </p>
+              <p className="text-text-3 mt-0.5">
+                {isTr
+                  ? 'Sistem kullanıma hazır. Yeni bir çağrı açabilir veya örnek kurumsal senaryoları yükleyebilirsiniz.'
+                  : 'System is ready for production. Open a new request or load demo dataset.'}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              type="button"
+              onClick={() => setActiveModal('new_ticket')}
+              className="btn btn--accent btn--sm cursor-pointer"
+            >
+              <Plus className="w-3.5 h-3.5" />
+              <span>{isTr ? 'Yeni Çağrı Aç' : 'New Request'}</span>
+            </button>
+            <button
+              type="button"
+              onClick={loadSampleData}
+              className="btn btn--glass btn--sm cursor-pointer text-accent hover:border-accent"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{isTr ? 'Örnek Demo Verilerini Yükle' : 'Load Demo Data'}</span>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* 3. Live Sürüklenebilir (Drag & Drop) Kanban Board View */}
       {viewMode === 'kanban' && (

@@ -13,7 +13,9 @@ import {
   FileText,
   Network,
   RotateCw,
-  ArrowRight
+  ArrowRight,
+  Database,
+  Trash2
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { WallPreset, AccentPreset, GlassMode } from '../../types';
@@ -33,6 +35,8 @@ export const SettingsView: React.FC = () => {
     syncActiveDirectory,
     isAdSyncing,
     adUsers,
+    loadSampleData,
+    clearAllData,
     language,
     t
   } = useApp();
@@ -477,6 +481,55 @@ export const SettingsView: React.FC = () => {
           <div className="p-3 rounded-2xl bg-fill/20 border border-white/5 space-y-1">
             <span className="text-text-3">Status:</span>
             <p className="font-bold text-emerald-400 font-sans">Active & Compliant</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Data Management & Clean Slate Governance */}
+      <section className="card glass space-y-4">
+        <header className="card__head pb-3 border-b border-sep/30">
+          <div className="card__lead">
+            <h2 className="card__title flex items-center gap-2">
+              <Database className="w-5 h-5 text-accent" />
+              {isTr ? 'Veri Yönetimi & Başlangıç Şablonları' : 'Data Management & Sample Templates'}
+            </h2>
+            <p className="card__sub">
+              {isTr
+                ? 'Pazarlama ve temiz canlı yayına geçiş için veritabanı sıfırlama veya ISO 27001 şablon yükleme'
+                : 'Clean slate release reset or sample demo dataset rehydration'}
+            </p>
+          </div>
+        </header>
+
+        <div className="p-4 rounded-2xl bg-fill/20 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+          <div>
+            <p className="font-bold text-text">
+              {isTr ? 'Canlı Yayına Hazır Temiz Durum' : 'Production Clean Slate'}
+            </p>
+            <p className="text-text-3 mt-0.5">
+              {isTr
+                ? 'İçerideki sahte kayıtları tek tıkla silebilir veya pazarlama demoları için örnek ISO 27001 kayıtlarını yükleyebilirsiniz.'
+                : 'Clear all dummy records or rehydrate realistic ISO 27001 compliance data for demonstrations.'}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              type="button"
+              onClick={clearAllData}
+              className="btn btn--glass btn--sm cursor-pointer text-rose-400 hover:border-rose-400/50 flex items-center gap-1.5"
+            >
+              <Trash2 className="w-3.5 h-3.5" />
+              <span>{isTr ? 'Kayıtları Sıfırla (Temiz Durum)' : 'Reset to Clean Slate'}</span>
+            </button>
+            <button
+              type="button"
+              onClick={loadSampleData}
+              className="btn btn--accent btn--sm cursor-pointer flex items-center gap-1.5"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{isTr ? 'Örnek Verileri Yükle' : 'Load Demo Data'}</span>
+            </button>
           </div>
         </div>
       </section>

@@ -14,7 +14,8 @@ import {
   Download,
   QrCode,
   FileText,
-  UserCheck
+  UserCheck,
+  Sparkles
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { AssetCategory, AssetStatus, HardwareAsset } from '../../types';
@@ -27,6 +28,7 @@ export const AssetsView: React.FC = () => {
     assets,
     setSelectedAsset,
     setActiveModal,
+    loadSampleData,
     t
   } = useApp();
 
@@ -194,6 +196,45 @@ export const AssetsView: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Clean Slate Empty State Banner */}
+      {assets.length === 0 && (
+        <div className="p-6 rounded-2xl glass border border-white/10 bg-fill/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs animate-fade-in shadow-glass-lift">
+          <div className="flex items-center gap-3.5">
+            <div className="p-3 rounded-2xl bg-accent/20 text-accent">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="font-bold text-text text-sm">
+                {isTr ? 'Temiz Kurulum: Henüz Kayıtlı Fiziki Donanım Yok' : 'Clean Slate: No Hardware Assets Registered Yet'}
+              </p>
+              <p className="text-text-3 mt-0.5">
+                {isTr
+                  ? 'ITAM envanteriniz hazır. Yeni bir donanım tanımlayabilir veya örnek demo envanterini yükleyebilirsiniz.'
+                  : 'ITAM repository is ready. Onboard a physical asset or load the sample enterprise fleet.'}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              type="button"
+              onClick={() => setActiveModal('new_asset')}
+              className="btn btn--accent btn--sm cursor-pointer"
+            >
+              <Plus className="w-3.5 h-3.5" />
+              <span>{isTr ? 'Yeni Cihaz Tanımla' : 'Add Asset'}</span>
+            </button>
+            <button
+              type="button"
+              onClick={loadSampleData}
+              className="btn btn--glass btn--sm cursor-pointer text-accent hover:border-accent"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{isTr ? 'Örnek Donanım Envanterini Yükle' : 'Load Demo Assets'}</span>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* 3. Assets Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
