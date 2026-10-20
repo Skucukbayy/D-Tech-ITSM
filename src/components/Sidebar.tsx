@@ -21,6 +21,7 @@ import gsap from 'gsap';
 import { useApp, ActiveView } from '../context/AppContext';
 import { UserRole } from '../types';
 import { animateLens } from '../utils/animations';
+import { DTechLogo } from './DTechLogo';
 
 export const Sidebar: React.FC = () => {
   const {
@@ -92,14 +93,11 @@ export const Sidebar: React.FC = () => {
         className="brand cursor-pointer group"
         aria-label="ITSM home"
       >
-        <span className="brand__mark overflow-hidden" aria-hidden="true">
+        <span className="brand__mark overflow-hidden flex items-center justify-center p-0.5" aria-hidden="true">
           {companyProfile.logoUrl ? (
             <img src={companyProfile.logoUrl} alt="Company Logo" className="w-full h-full object-cover rounded-lg" />
           ) : (
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
-              <path d="M3.8 12.5c3.4-1.6 6.4-1.6 9 0s5.2 1.6 7.4 0" />
-            </svg>
+            <DTechLogo size={32} />
           )}
         </span>
         <div className="truncate">

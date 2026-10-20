@@ -1,10 +1,10 @@
 {
-  "name": "vitreus-itsm",
+  "name": "d-tech-itsm",
   "version": "1.0.0",
-  "description": "Enterprise-grade Liquid Glass ITSM & ITAM Platform with ISO/IEC 27001:2022 ISMS Compliance & Active Directory (LDAPS) Integration",
+  "description": "D-Tech ITSM — Enterprise Liquid Glass ITSM & ITAM Platform with ISO/IEC 27001:2022 ISMS Compliance & Active Directory (LDAPS) Integration",
   "private": false,
   "license": "MIT",
-  "author": "Vitreus Core Team",
+  "author": "D-Tech Core Engineering",
   "type": "module",
   "scripts": {
     "dev": "vite",

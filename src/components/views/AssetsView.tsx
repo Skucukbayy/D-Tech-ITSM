@@ -91,7 +91,7 @@ export const AssetsView: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Vitreus_Hardware_Assets_ISO27001_${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `DTech_Hardware_Assets_ISO27001_${new Date().toISOString().split('T')[0]}.csv`;
     a.click();
   };
 

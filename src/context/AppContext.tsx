@@ -128,7 +128,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   // Company Profile with Logo
   const [companyProfile, setCompanyProfile] = useState<CompanyProfile>({
-    name: 'Vitreus Kurumsal',
+    name: 'D-Tech ITSM',
     logoUrl: '',
     tagline: 'Enterprise ITSM & ISO 27001'
   });
@@ -361,7 +361,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const asset: HardwareAsset = {
       ...newAssetData,
       id,
-      qrCodeData: `https://vitreus.enterprise.io/assets/${newAssetData.assetTag}`,
+      qrCodeData: `https://dtech.enterprise.io/assets/${newAssetData.assetTag}`,
       history: [
         {
           id: `h-${Date.now()}`,
@@ -524,7 +524,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           ticket.creator.email,
           ticket.creator.userName,
           `[${ticket.ticketNumber}] ÇÖZÜMLENDİ: ${ticket.title}`,
-          `Sayın ${ticket.creator.userName},\n\n${ticket.ticketNumber} numaralı "${ticket.title}" konulu çağrınız IT ekibimiz tarafından başarıyla çözümlenmiştir.\n\nSorununuz devam ederse veya ek destek isterseniz çağrıyı yeniden açabilirsiniz.\nMemnuniyetinizi değerlendirmek için: https://vitreus.enterprise.io/feedback/${ticket.ticketNumber}\n\nİyi çalışmalar dileriz,\nIT Destek Masası`,
+          `Sayın ${ticket.creator.userName},\n\n${ticket.ticketNumber} numaralı "${ticket.title}" konulu çağrınız IT ekibimiz tarafından başarıyla çözümlenmiştir.\n\nSorununuz devam ederse veya ek destek isterseniz çağrıyı yeniden açabilirsiniz.\nMemnuniyetinizi değerlendirmek için: https://dtech.enterprise.io/feedback/${ticket.ticketNumber}\n\nİyi çalışmalar dileriz,\nD-Tech IT Destek Masası`,
           ticket.ticketNumber,
           'resolved'
         );

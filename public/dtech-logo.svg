@@ -1,0 +1,63 @@
+<svg width="128" height="128" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dtech-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#06B6D4" />
+      <stop offset="45%" stopColor="#2563EB" />
+      <stop offset="100%" stopColor="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="dtech-glass" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.85" />
+      <stop offset="35%" stopColor="#FFFFFF" stopOpacity="0.25" />
+      <stop offset="70%" stopColor="#38BDF8" stopOpacity="0.1" />
+      <stop offset="100%" stopColor="#000000" stopOpacity="0.3" />
+    </linearGradient>
+    <linearGradient id="dtech-circuit" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stopColor="#38BDF8" />
+      <stop offset="100%" stopColor="#A855F7" />
+    </linearGradient>
+    <radialGradient id="dtech-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.5" />
+      <stop offset="100%" stopColor="#38BDF8" stopOpacity="0" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="50" cy="50" r="46" fill="url(#dtech-glow)" />
+
+  <rect
+    x="8"
+    y="8"
+    width="84"
+    height="84"
+    rx="24"
+    fill="#0C101D"
+    stroke="url(#dtech-circuit)"
+    strokeWidth="2"
+  />
+
+  <path
+    d="M 28 22 C 28 22, 54 22, 65 31 C 76 40, 78 60, 65 69 C 54 78, 28 78, 28 78 Z"
+    fill="url(#dtech-bg)"
+  />
+
+  <path
+    d="M 40 34 L 50 34 C 57 34, 63 41, 63 50 C 63 59, 57 66, 50 66 L 40 66 Z"
+    fill="#0C101D"
+  />
+
+  <polygon
+    points="49,42 57,50 49,58 41,50"
+    fill="url(#dtech-circuit)"
+  />
+  <circle cx="49" cy="50" r="2.5" fill="#FFFFFF" />
+
+  <path d="M 20 50 L 32 50" stroke="#38BDF8" strokeWidth="2.5" strokeLinecap="round" />
+  <circle cx="18" cy="50" r="2" fill="#38BDF8" />
+
+  <path d="M 69 50 L 82 50" stroke="#A855F7" strokeWidth="2.5" strokeLinecap="round" />
+  <circle cx="84" cy="50" r="2" fill="#A855F7" />
+
+  <path
+    d="M 12 16 C 24 10, 76 10, 88 16 C 80 32, 20 44, 12 16 Z"
+    fill="url(#dtech-glass)"
+  />
+</svg>

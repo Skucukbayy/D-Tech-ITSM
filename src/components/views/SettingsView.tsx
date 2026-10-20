@@ -68,9 +68,9 @@ export const SettingsView: React.FC = () => {
 
   const PRESET_LOGOS = [
     {
-      id: 'vitreus',
-      name: 'Vitreus Crystal',
-      svg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="%232f7cf6"/><path d="M24 10L36 18V30L24 38L12 30V18L24 10Z" fill="white" fill-opacity="0.25" stroke="white" stroke-width="2.5"/><path d="M24 10V38M12 18L36 30M36 18L12 30" stroke="white" stroke-width="2"/></svg>`
+      id: 'dtech',
+      name: 'D-Tech Modern',
+      svg: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="12" fill="%2306b6d4"/><path d="M14 12C14 12 26 12 32 17C38 22 38 30 32 35C26 40 14 40 14 40Z" fill="%232563eb"/><path d="M20 18L26 18C29 18 32 21 32 26C32 31 29 34 26 34L20 34Z" fill="%230c101d"/><circle cx="26" cy="26" r="3" fill="%2338bdf8"/></svg>`
     },
     {
       id: 'cybershield',
@@ -152,7 +152,7 @@ export const SettingsView: React.FC = () => {
                   type="text"
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  placeholder="Örn: Vitreus Holding A.Ş."
+                  placeholder="Örn: D-Tech Holding A.Ş."
                   className="w-full px-3.5 py-2.5 rounded-xl glass bg-fill/40 border border-white/10 text-xs text-text focus:outline-none focus:border-accent"
                   required
                 />

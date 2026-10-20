@@ -85,7 +85,7 @@ export const Toolbar: React.FC = () => {
     settings: language === 'tr' ? 'Ayarlar — Kurumsal Logo & Likit Cam' : 'Settings — Corporate Logo & Liquid Glass',
   };
 
-  const currentTitle = viewTitles[activeView] || 'Vitreus ITSM';
+  const currentTitle = viewTitles[activeView] || 'D-Tech ITSM';
 
   return (
     <header className="toolbar" aria-label="Toolbar">

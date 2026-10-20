@@ -1,5 +1,9 @@
-# Vitreus ITSM & ITAM Platform
-### *Next-Generation Liquid Glass Enterprise Service Desk, Physical Asset Intelligence & ISO/IEC 27001:2022 ISMS Compliance Engine*
+<p align="center">
+  <img src="public/dtech-logo.svg" width="96" height="96" alt="D-Tech ITSM Logo" />
+</p>
+
+# D-Tech ITSM & ITAM Platform
+### *Enterprise Liquid Glass Service Desk, Physical Asset Intelligence & ISO/IEC 27001:2022 ISMS Compliance Engine*
 
 [![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -13,9 +17,9 @@
 
 ## 🌟 Overview
 
-**Vitreus ITSM** is a commercial-grade, open-source Enterprise IT Service Management (ITSM) and Physical Asset Management (ITAM) platform designed for modern enterprises that demand both **aesthetic perfection** and **uncompromising security compliance**.
+**D-Tech ITSM** is a commercial-grade, open-source Enterprise IT Service Management (ITSM) and Physical Asset Management (ITAM) platform designed for modern enterprises that demand both **aesthetic perfection** and **uncompromising security compliance**.
 
-Reverse-engineered and elevated from high-end liquid glass design architectures, Vitreus combines macOS/visionOS translucent depth aesthetics with the stringent requirements of **ISO/IEC 27001:2022 Information Security Management Systems (ISMS)**, **Active Directory (LDAPS / TLS 1.3)** enterprise role-based access control, and **interactive drag-and-drop workflow orchestration**.
+Reverse-engineered and elevated from high-end liquid glass design architectures, D-Tech combines macOS/visionOS translucent depth aesthetics with the stringent requirements of **ISO/IEC 27001:2022 Information Security Management Systems (ISMS)**, **Active Directory (LDAPS / TLS 1.3)** enterprise role-based access control, and **interactive drag-and-drop workflow orchestration**.
 
 ---
 
@@ -55,7 +59,7 @@ Whenever actions occur in the platform, automated emails are dispatched and logg
 
 ### 6. 🔒 ISO/IEC 27001:2022 Continuous ISMS Compliance Engine
 Built-in mapping to the ISO/IEC 27001:2022 Annex A controls:
-| Control | Clause | Objective | Vitreus Implementation |
+| Control | Clause | Objective | D-Tech Implementation |
 | :--- | :--- | :--- | :--- |
 | **A.5.9** | Clause 5 | Inventory of information and other associated assets | Automated asset registry with unique AST tags, custodians, and serial numbers. |
 | **A.5.10** | Clause 5 | Acceptable use of information and other associated assets | Digital *Zimmet Tutanağı* handover workflow with signature audit records. |
@@ -75,7 +79,7 @@ Built-in mapping to the ISO/IEC 27001:2022 Annex A controls:
 ## 🛠️ Technology Stack & Architecture
 
 ```
-vitreus-itsm/
+d-tech-itsm/
 ├── src/
 │   ├── components/
 │   │   ├── modals/             # Global liquid glass modal dialogs
@@ -129,8 +133,8 @@ vitreus-itsm/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-organization/vitreus-itsm.git
-cd vitreus-itsm
+git clone https://github.com/your-organization/d-tech-itsm.git
+cd d-tech-itsm
 ```
 
 ### 2. Install Dependencies

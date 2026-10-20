@@ -127,7 +127,7 @@ export const INITIAL_ASSETS: HardwareAsset[] = [
     warrantyExpiry: '2027-11-20',
     purchaseCost: 3899,
     vendor: 'Apple Business Enterprise',
-    qrCodeData: 'https://vitreus.enterprise.io/assets/AST-2026-M3X',
+    qrCodeData: 'https://dtech.enterprise.io/assets/AST-2026-M3X',
     notes: 'Primary workstation for Head of SecOps. Zero-trust enrolled with Jamf Pro & Cloudflare WARP.',
     history: [
       { id: 'h1', date: '2024-11-20', action: 'Asset Procurement', actor: 'Procurement Dept', details: 'Purchased via PO #88219' },
@@ -175,7 +175,7 @@ export const INITIAL_ASSETS: HardwareAsset[] = [
     warrantyExpiry: '2029-04-12',
     purchaseCost: 14200,
     vendor: 'Dell Enterprise Direct',
-    qrCodeData: 'https://vitreus.enterprise.io/assets/AST-2026-SRV1',
+    qrCodeData: 'https://dtech.enterprise.io/assets/AST-2026-SRV1',
     notes: 'Kubernetes Master Node 01. Strict dual-custody access protocol under ISO 27001 Annex A.11 Physical Security.',
     history: [
       { id: 'h1', date: '2024-04-12', action: 'Server Commissioned', actor: 'Data Center Lead', details: 'Rack mounted in DC-1 Rack 14' },
@@ -222,7 +222,7 @@ export const INITIAL_ASSETS: HardwareAsset[] = [
     warrantyExpiry: '2028-08-15',
     purchaseCost: 6850,
     vendor: 'Cisco Gold Partner Inc.',
-    qrCodeData: 'https://vitreus.enterprise.io/assets/AST-2026-SW01',
+    qrCodeData: 'https://dtech.enterprise.io/assets/AST-2026-SW01',
     notes: 'Core Distribution Switch. 802.1X Network Access Control enforced for all physical ethernet wall outlets.',
     history: [
       { id: 'h1', date: '2023-09-01', action: 'Installed & Configured', actor: 'Network Eng', details: 'Radius 802.1x authentication configured' }
@@ -264,7 +264,7 @@ export const INITIAL_ASSETS: HardwareAsset[] = [
     warrantyExpiry: '2027-01-20',
     purchaseCost: 85,
     vendor: 'Yubico AB',
-    qrCodeData: 'https://vitreus.enterprise.io/assets/AST-2026-YUBI-44',
+    qrCodeData: 'https://dtech.enterprise.io/assets/AST-2026-YUBI-44',
     notes: 'Hardware MFA token for GitHub Enterprise, AWS Production & Okta FastPass phishing-resistant FIDO2 authentication.',
     history: [
       { id: 'h1', date: '2025-02-01', action: 'Token Provisioned', actor: 'SecOps', details: 'Enrolled in Okta FIDO2 & AWS IAM MFA' }
@@ -301,7 +301,7 @@ export const INITIAL_ASSETS: HardwareAsset[] = [
     warrantyExpiry: '2028-03-10',
     purchaseCost: 2399,
     vendor: 'Apple Business Enterprise',
-    qrCodeData: 'https://vitreus.enterprise.io/assets/AST-2026-M14P',
+    qrCodeData: 'https://dtech.enterprise.io/assets/AST-2026-M14P',
     notes: 'Imaged with corporate Gold Master. Ready for immediate deployment to incoming developer or manager.',
     history: [
       { id: 'h1', date: '2025-03-10', action: 'Device Received', actor: 'IT Helpdesk', details: 'Added to inventory stock pool' }
@@ -347,7 +347,7 @@ export const INITIAL_ASSETS: HardwareAsset[] = [
     warrantyExpiry: '2027-02-10',
     purchaseCost: 4950,
     vendor: 'Fortinet Platinum Partner',
-    qrCodeData: 'https://vitreus.enterprise.io/assets/AST-2026-FW01',
+    qrCodeData: 'https://dtech.enterprise.io/assets/AST-2026-FW01',
     notes: 'Perimeter Next-Gen Firewall. IPS/IDS, SSL Deep Inspection and IPsec tunnels compliant with ISO 27001 Annex A.13.',
     history: [
       { id: 'h1', date: '2024-02-18', action: 'Deployment in HA Pair', actor: 'CISO Office', details: 'Configured active-passive high availability cluster' }
@@ -389,7 +389,7 @@ export const INITIAL_ASSETS: HardwareAsset[] = [
     warrantyExpiry: '2028-01-10',
     purchaseCost: 980,
     vendor: 'Dell Enterprise Direct',
-    qrCodeData: 'https://vitreus.enterprise.io/assets/AST-2026-MON32',
+    qrCodeData: 'https://dtech.enterprise.io/assets/AST-2026-MON32',
     notes: 'Equipped with built-in physical privacy webcam shutter for compliance with clean desk policy.',
     history: [
       { id: 'h1', date: '2025-01-15', action: 'Assigned with Laptop', actor: 'IT Asset Lead', details: 'Added to Selim K. asset custody list' }
@@ -434,7 +434,7 @@ export const INITIAL_ASSETS: HardwareAsset[] = [
     warrantyExpiry: '2026-09-28',
     purchaseCost: 1199,
     vendor: 'Turkcell Kurumsal',
-    qrCodeData: 'https://vitreus.enterprise.io/assets/AST-2026-IP16P',
+    qrCodeData: 'https://dtech.enterprise.io/assets/AST-2026-IP16P',
     notes: '24/7 Duty escalation phone. Microsoft Intune MDM containerized work profile active.',
     history: [
       { id: 'h1', date: '2024-10-05', action: 'Device Enrolled', actor: 'SecOps', details: 'Intune MDM profile & PagerDuty escalation enrolled' }
@@ -957,7 +957,7 @@ export const INITIAL_AD_USERS: AdUser[] = [
     mail: 'selim@enterprise.io',
     title: 'Chief Information Security Officer (CISO)',
     department: 'Information Security & Infrastructure',
-    company: 'Vitreus Enterprise Corp',
+    company: 'D-Tech Enterprise Corp',
     telephoneNumber: '+90 (212) 555-0199',
     memberOf: [
       'CN=Domain-Admins,OU=Security-Groups,DC=enterprise,DC=corp',
@@ -978,7 +978,7 @@ export const INITIAL_AD_USERS: AdUser[] = [
     mail: 'elena.rostova@enterprise.io',
     title: 'Service Desk Lead & CAB Moderator',
     department: 'IT Service Management (ITSM)',
-    company: 'Vitreus Enterprise Corp',
+    company: 'D-Tech Enterprise Corp',
     telephoneNumber: '+90 (212) 555-0145',
     memberOf: [
       'CN=IT-ServiceDesk-Managers,OU=IT-Groups,DC=enterprise,DC=corp',
@@ -998,7 +998,7 @@ export const INITIAL_AD_USERS: AdUser[] = [
     mail: 'david.miller@enterprise.io',
     title: 'Senior Network & Datacenter Specialist',
     department: 'Network & Cloud Infrastructure',
-    company: 'Vitreus Enterprise Corp',
+    company: 'D-Tech Enterprise Corp',
     telephoneNumber: '+90 (212) 555-0182',
     memberOf: [
       'CN=IT-Systems-Technicians,OU=IT-Groups,DC=enterprise,DC=corp',
@@ -1018,7 +1018,7 @@ export const INITIAL_AD_USERS: AdUser[] = [
     mail: 'canan.yildiz@enterprise.io',
     title: 'Cyber Defense & Endpoint Specialist',
     department: 'SOC & SecOps',
-    company: 'Vitreus Enterprise Corp',
+    company: 'D-Tech Enterprise Corp',
     telephoneNumber: '+90 (212) 555-0164',
     memberOf: [
       'CN=IT-Systems-Technicians,OU=IT-Groups,DC=enterprise,DC=corp',
@@ -1038,7 +1038,7 @@ export const INITIAL_AD_USERS: AdUser[] = [
     mail: 'lin@enterprise.io',
     title: 'Principal Software Engineer',
     department: 'Product & Cloud Engineering',
-    company: 'Vitreus Enterprise Corp',
+    company: 'D-Tech Enterprise Corp',
     telephoneNumber: '+90 (212) 555-0121',
     memberOf: [
       'CN=Domain-Users,OU=Employees,DC=enterprise,DC=corp',
@@ -1058,7 +1058,7 @@ export const INITIAL_AD_USERS: AdUser[] = [
     mail: 'emre.demir@enterprise.io',
     title: 'Senior Financial Controller',
     department: 'Finance & Operations',
-    company: 'Vitreus Enterprise Corp',
+    company: 'D-Tech Enterprise Corp',
     telephoneNumber: '+90 (212) 555-0138',
     memberOf: [
       'CN=Domain-Users,OU=Employees,DC=enterprise,DC=corp',
