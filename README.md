@@ -11,10 +11,25 @@
 [![GSAP 3](https://img.shields.io/badge/GSAP-3.15.0-88CE02?style=for-the-badge&logo=greensock&logoColor=black)](https://greensock.com/gsap/)
 [![ISO 27001](https://img.shields.io/badge/ISO%2FIEC_27001-2022_Compliant-00C781?style=for-the-badge&logo=shield&logoColor=white)](https://www.iso.org/standard/27001)
 [![Active Directory](https://img.shields.io/badge/Active_Directory-LDAPS_636-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-d--tech--itsm.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://d-tech-itsm.vercel.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 <p align="center">
-  <img src="docs/demo.gif" alt="D-Tech ITSM Interactive Platform Demo" style="border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.5); max-width: 100%;" />
+  <a href="https://d-tech-itsm.vercel.app" target="_blank">
+    <img src="docs/demo.gif" alt="D-Tech ITSM Interactive Platform Demo" style="border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.5); max-width: 100%;" />
+  </a>
+</p>
+
+<p align="center">
+  <b>🌐 Live Demo:</b> <a href="https://d-tech-itsm.vercel.app">https://d-tech-itsm.vercel.app</a>
+  &nbsp;&nbsp;•&nbsp;&nbsp;
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSkucukbayy%2FD-Tech-ITSM">
+    <img src="https://vercel.com/button" height="28" style="vertical-align: middle;" alt="Deploy with Vercel" />
+  </a>
+  &nbsp;&nbsp;•&nbsp;&nbsp;
+  <a href="https://app.netlify.com/start/deploy?repository=https://github.com/Skucukbayy/D-Tech-ITSM">
+    <img src="https://www.netlify.com/img/deploy/button.svg" height="28" style="vertical-align: middle;" alt="Deploy to Netlify" />
+  </a>
 </p>
 
 ---
@@ -163,8 +178,8 @@ d-tech-itsm/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-organization/d-tech-itsm.git
-cd d-tech-itsm
+git clone https://github.com/Skucukbayy/D-Tech-ITSM.git
+cd D-Tech-ITSM
 ```
 
 ### 2. Install Dependencies
@@ -176,13 +191,88 @@ npm install
 ```bash
 npm run dev
 ```
-Open your browser and navigate to `http://127.0.0.1:5173/`.
+Open your browser and navigate to `http://localhost:5173/` *(Port can be changed in `vite.config.ts`)*.
 
 ### 4. Build for Production
 ```bash
 npm run build
 ```
 The optimized production bundle will be generated in the `dist/` directory.
+
+---
+
+## 🌍 Custom Domain & Production Cloud Deployment
+
+### 1. Vercel Deployment (Recommended)
+1. Fork or import this repository on [Vercel](https://vercel.com/new).
+2. Framework preset will automatically detect **Vite**.
+3. Click **Deploy**. Vercel will build and assign `https://d-tech-itsm.vercel.app`.
+
+#### Custom Domain Setup on Vercel:
+Go to **Project Settings → Domains**:
+- **Corporate Subdomain** (e.g. `itsm.yourcompany.com`):
+  | Type | Name | Value | TTL |
+  | :--- | :--- | :--- | :--- |
+  | `CNAME` | `itsm` | `cname.vercel-dns.com` | Automatic / 60s |
+
+- **Apex Domain** (e.g. `dtech-itsm.com`):
+  | Type | Name | Value | TTL |
+  | :--- | :--- | :--- | :--- |
+  | `A` | `@` | `76.76.21.21` | Automatic / 60s |
+
+*SSL/TLS 1.3 certificates are provisioned and renewed automatically via Let's Encrypt.*
+
+---
+
+### 2. Netlify Deployment
+1. Import repository on [Netlify](https://app.netlify.com/start).
+2. Netlify will read [`netlify.toml`](./netlify.toml) automatically:
+   - **Build Command**: `npm run build`
+   - **Publish Directory**: `dist`
+3. In **Domain Management → Custom Domains**:
+   - Add your custom domain (e.g. `itsm.yourcompany.com`).
+   - Point your DNS provider's CNAME record to `<your-site-name>.netlify.app`.
+
+---
+
+### 3. On-Premise / Datacenter Nginx Reverse Proxy
+For self-hosted internal datacenter deployments compliant with ISO 27001 Annex A.8.20:
+
+```nginx
+server {
+    listen 80;
+    server_name itsm.yourcompany.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name itsm.yourcompany.com;
+
+    ssl_certificate /etc/ssl/certs/dtech_itsm.crt;
+    ssl_certificate_key /etc/ssl/private/dtech_itsm.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    # Security Headers (ISO 27001 ISMS)
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
+    root /var/www/d-tech-itsm/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
+```
 
 ---
 
