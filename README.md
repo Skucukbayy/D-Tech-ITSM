@@ -11,17 +11,17 @@
 [![GSAP 3](https://img.shields.io/badge/GSAP-3.15.0-88CE02?style=for-the-badge&logo=greensock&logoColor=black)](https://greensock.com/gsap/)
 [![ISO 27001](https://img.shields.io/badge/ISO%2FIEC_27001-2022_Compliant-00C781?style=for-the-badge&logo=shield&logoColor=white)](https://www.iso.org/standard/27001)
 [![Active Directory](https://img.shields.io/badge/Active_Directory-LDAPS_636-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-d--tech--itsm.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://d-tech-itsm.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-dtechitsm.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://dtechitsm.vercel.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 <p align="center">
-  <a href="https://d-tech-itsm.vercel.app" target="_blank">
+  <a href="https://dtechitsm.vercel.app" target="_blank">
     <img src="docs/demo.gif" alt="D-Tech ITSM Interactive Platform Demo" style="border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 50px rgba(0,0,0,0.5); max-width: 100%;" />
   </a>
 </p>
 
 <p align="center">
-  <b>🌐 Live Demo:</b> <a href="https://d-tech-itsm.vercel.app">https://d-tech-itsm.vercel.app</a>
+  <b>🌐 Live Demo:</b> <a href="https://dtechitsm.vercel.app">https://dtechitsm.vercel.app</a>
   &nbsp;&nbsp;•&nbsp;&nbsp;
   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSkucukbayy%2FD-Tech-ITSM">
     <img src="https://vercel.com/button" height="28" style="vertical-align: middle;" alt="Deploy with Vercel" />
@@ -206,7 +206,7 @@ The optimized production bundle will be generated in the `dist/` directory.
 ### 1. Vercel Deployment (Recommended)
 1. Fork or import this repository on [Vercel](https://vercel.com/new).
 2. Framework preset will automatically detect **Vite**.
-3. Click **Deploy**. Vercel will build and assign `https://d-tech-itsm.vercel.app`.
+3. Click **Deploy**. Vercel will build and assign `https://dtechitsm.vercel.app`.
 
 #### Custom Domain Setup on Vercel:
 Go to **Project Settings → Domains**:
